@@ -1,0 +1,71 @@
+.multiselect-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #1a1a2e;
+  color: white;
+  z-index: 100;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.multiselect-info span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.multiselect-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ms-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: background 0.15s;
+}
+
+.ms-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ms-btn.danger {
+  background: rgba(229, 57, 53, 0.2);
+  color: #ff6b6b;
+}
+
+.ms-btn.danger:hover {
+  background: rgba(229, 57, 53, 0.35);
+}
+
+.ms-btn.cancel {
+  background: rgba(255, 255, 255, 0.05);
+  color: #aaa;
+}
+
+.ms-btn.cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}

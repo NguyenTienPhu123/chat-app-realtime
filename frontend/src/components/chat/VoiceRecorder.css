@@ -1,0 +1,161 @@
+.voice-recorder {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.recording-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.recording-dot {
+  width: 12px;
+  height: 12px;
+  background: #ff3b30;
+  border-radius: 50%;
+}
+
+.recording-dot.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+.recording-time {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  font-variant-numeric: tabular-nums;
+}
+
+.waveform-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+  height: 60px;
+  padding: 0 10px;
+}
+
+.waveform-bar {
+  width: 3px;
+  background: linear-gradient(to top, #0084ff, #00c6ff);
+  border-radius: 2px;
+  transition: height 0.1s;
+  min-height: 4px;
+}
+
+.audio-preview {
+  width: 100%;
+  height: 40px;
+}
+
+.recorder-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.cancel-recording-btn,
+.send-recording-btn,
+.stop-recording-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-recording-btn {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.cancel-recording-btn:hover {
+  background: #e0e0e0;
+}
+
+.send-recording-btn {
+  background: linear-gradient(135deg, #0084ff 0%, #0068cc 100%);
+  color: white;
+}
+
+.send-recording-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 132, 255, 0.3);
+}
+
+.stop-recording-btn {
+  background: #ff3b30;
+  color: white;
+}
+
+.stop-recording-btn:hover {
+  background: #ff2d20;
+}
+
+.cancel-recording-btn:active,
+.send-recording-btn:active,
+.stop-recording-btn:active {
+  transform: scale(0.95);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .voice-recorder {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 20px 20px 0 0;
+    padding: 24px 20px;
+  }
+
+  .waveform-container {
+    height: 50px;
+  }
+
+  .recorder-actions {
+    flex-direction: column;
+  }
+
+  .cancel-recording-btn,
+  .send-recording-btn,
+  .stop-recording-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

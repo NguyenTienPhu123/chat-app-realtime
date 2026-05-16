@@ -1,0 +1,360 @@
+.af-container {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary, #fff);
+  min-height: 320px;
+}
+
+/* Tabs */
+.af-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color, #f0f0f0);
+  padding: 0 4px;
+}
+
+.af-tab {
+  flex: 1;
+  padding: 12px 8px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary, #8a8d91);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.af-tab.active {
+  color: #0068ff;
+}
+
+.af-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: #0068ff;
+  border-radius: 2px 2px 0 0;
+}
+
+.af-tab:hover:not(.active) {
+  color: var(--text-primary, #1c1e21);
+}
+
+.af-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: #e53935;
+  color: #fff;
+  border-radius: 9px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Search panel */
+.af-search-panel {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.af-search-hint {
+  font-size: 12px;
+  color: var(--text-secondary, #8a8d91);
+}
+
+.af-search-row {
+  display: flex;
+  gap: 8px;
+}
+
+.af-input-wrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.af-search-icon {
+  position: absolute;
+  left: 10px;
+  color: #b0b3b8;
+  pointer-events: none;
+}
+
+.af-input {
+  width: 100%;
+  padding: 8px 32px 8px 32px;
+  border: 1px solid var(--border-color, #e4e6eb);
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  background: var(--bg-secondary, #f7f8fa);
+  color: var(--text-primary, #1c1e21);
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+
+.af-input:focus {
+  border-color: #0068ff;
+  background: var(--bg-primary, #fff);
+  box-shadow: 0 0 0 3px rgba(0, 104, 255, 0.08);
+}
+
+.af-input-clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #b0b3b8;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 50%;
+  transition: color 0.15s;
+}
+
+.af-input-clear:hover {
+  color: var(--text-secondary, #65676b);
+}
+
+/* Buttons */
+.af-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    opacity 0.15s;
+  border: none;
+  flex-shrink: 0;
+}
+
+.af-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.af-btn-search {
+  background: #0068ff;
+  color: #fff;
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.af-btn-search:hover:not(:disabled) {
+  background: #0057d4;
+}
+
+.af-btn-primary {
+  background: #0068ff;
+  color: #fff;
+}
+
+.af-btn-primary:hover:not(:disabled) {
+  background: #0057d4;
+}
+
+.af-btn-accept {
+  background: #0068ff;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 12px;
+}
+
+.af-btn-accept:hover:not(:disabled) {
+  background: #0057d4;
+}
+
+.af-btn-reject {
+  background: var(--bg-secondary, #f0f2f5);
+  color: var(--text-primary, #1c1e21);
+  font-size: 12px;
+  padding: 6px 12px;
+}
+
+.af-btn-reject:hover:not(:disabled) {
+  background: var(--border-color, #e4e6eb);
+}
+
+/* Error box */
+.af-error-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #fff5f5;
+  border: 1px solid #ffd7d7;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #e53935;
+}
+
+/* Result card */
+.af-result-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--bg-secondary, #f7f8fa);
+  border: 1px solid var(--border-color, #eee);
+}
+
+.af-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.af-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.af-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary, #1c1e21);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.af-email {
+  font-size: 11px;
+  color: var(--text-secondary, #8a8d91);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Status badges */
+.af-badge-status {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.af-badge-friend {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.af-badge-sent {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.af-badge-pending {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+/* Empty state */
+.af-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 28px 16px;
+  color: var(--text-secondary, #b0b3b8);
+  font-size: 12px;
+}
+
+/* Requests panel */
+.af-requests-panel {
+  padding: 8px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.af-requests-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary, #8a8d91);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 4px 0 2px;
+}
+
+.af-request-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--bg-secondary, #f7f8fa);
+  border: 1px solid var(--border-color, #eee);
+  transition: border-color 0.15s;
+}
+
+.af-request-card:hover {
+  border-color: var(--border-color, #ddd);
+}
+
+.af-request-btns {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+/* Loading */
+.af-loading {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
+/* Spinner */
+.af-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: af-spin 0.6s linear infinite;
+}
+
+.af-spinner--lg {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border-color, #e4e6eb);
+  border-top-color: #0068ff;
+}
+
+@keyframes af-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

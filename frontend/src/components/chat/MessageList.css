@@ -1,0 +1,171 @@
+.message-list {
+  flex: 1;
+  overflow-y: scroll;
+  position: relative;
+  scrollbar-gutter: stable;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+.message-list-content {
+  padding: 20px;
+  padding-right: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-list-loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f0f0f0;
+  border-top-color: #0084ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.date-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.date-separator span {
+  background: #ffffff;
+  color: #000000;
+  padding: 6px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 400;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  max-width: 80%;
+  text-align: center;
+}
+
+/* Highlight animation for scrolled-to message */
+.highlight {
+  animation: messageHighlight 2s ease-out;
+}
+
+@keyframes messageHighlight {
+  0% {
+    background: rgba(255, 235, 59, 0.5);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+/* Scrollbar styling */
+.message-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.message-list::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+.message-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+}
+
+.message-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .message-list-content {
+    padding: 16px 12px;
+  }
+
+  .date-separator {
+    margin: 16px 0;
+  }
+
+  .date-separator span {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+}
+.message-list {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: #f5f5f5;
+  position: relative;
+  scrollbar-gutter: stable;
+}
+
+.message-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.message-list::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 0;
+}
+
+.message-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 6px;
+  border: none;
+}
+
+.message-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+/* Quan trọng nhất - track phải bắt được hover */
+.message-list::-webkit-scrollbar-track:hover {
+  background: #d0d0d0;
+}
+/* ✅ Khi bật select mode, tạo khoảng trống phía dưới */
+.message-list.select-mode .message-list-content {
+  padding-bottom: 80px !important; /* Chừa chỗ cho thanh đen */
+}
+
+/* Scroll mượt */
+.message-list {
+  scroll-behavior: auto;
+}
+/* ✅ Ẩn tin nhắn khi đang load để không thấy scroll */
+.message-list {
+  opacity: 1;
+  transition: opacity 0.1s;
+}
+
+.message-list-content img {
+  display: block;
+}
+
+.message-list {
+  overflow-anchor: none;
+}
+.message-list {
+  overflow-anchor: none;
+}
+/* Wallpaper — bubble vẫn đọc được trên mọi ảnh nền */
+.message-list .message-bubble-wrapper {
+  position: relative;
+  z-index: 1;
+}
+.message-list {
+  scroll-behavior: smooth;
+}

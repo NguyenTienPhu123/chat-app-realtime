@@ -1,0 +1,46 @@
+# =========================
+# Node modules
+# =========================
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+backend/.env
+frontend/.env
+
+# =========================
+# Uploads (user data)
+# =========================
+backend/uploads/
+
+# =========================
+# Logs
+# =========================
+*.log
+npm-debug.log*
+
+# =========================
+# Build folders
+# =========================
+dist/
+build/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Personal notes
+# =========================
+các chức năng của chat.txt
+cách chạy.txt
+vấn đề ảnh.txt
+đường dẫn.txt
+.txt

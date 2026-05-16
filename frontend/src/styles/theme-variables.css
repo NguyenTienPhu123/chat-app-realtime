@@ -1,0 +1,192 @@
+/* ===== LIGHT MODE (DEFAULT) ===== */
+:root {
+  /* Colors */
+  --primary-color: #0084ff;
+  --primary-hover: #0068cc;
+  --primary-light: #e7f3ff;
+
+  /* Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f0f2f5;
+  --bg-tertiary: #e4e6eb;
+  --bg-hover: #f5f7fa;
+
+  /* Text */
+  --text-primary: #050505;
+  --text-secondary: #65676b;
+  --text-tertiary: #8a8d91;
+
+  /* Borders */
+  --border-color: #d0d3d8;
+  --border-light: #f0f2f5;
+
+  /* Message Bubbles */
+  --bubble-own: #d4edff;
+  --bubble-other: #ffffff;
+  --bubble-text-own: #1a1a1a;
+  --bubble-text-other: #050505;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  /* Status Colors */
+  --success-color: #31a24c;
+  --error-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+
+  /* Sidebar */
+  --sidebar-bg: #2b3a52;
+  --sidebar-icon: rgba(255, 255, 255, 0.7);
+  --sidebar-icon-active: rgba(255, 255, 255, 0.55);
+  --sidebar-hover: rgba(255, 255, 255, 0.1);
+
+  /* Online indicator */
+  --online-color: #31a24c;
+}
+
+/* ===== DARK MODE ===== */
+[data-theme="dark"] {
+  /* Colors */
+  --primary-color: #3797f0;
+  --primary-hover: #2680d9;
+  --primary-light: #1a2332;
+
+  /* Backgrounds */
+  --bg-primary: #18191a;
+  --bg-secondary: #242526;
+  --bg-tertiary: #3a3b3c;
+  --bg-hover: #303132;
+
+  /* Text */
+  --text-primary: #e4e6eb;
+  --text-secondary: #b0b3b8;
+  --text-tertiary: #8a8d91;
+
+  /* Borders */
+  --border-color: #3a3b3c;
+  --border-light: #2f3031;
+
+  /* Message Bubbles */
+  --bubble-own: #cce8ff;
+  --bubble-other: #3a3b3c;
+  --bubble-text-own: #1a1a1a;
+  --bubble-text-other: #e4e6eb;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.6);
+
+  /* Status Colors */
+  --success-color: #46c660;
+  --error-color: #ff4444;
+  --warning-color: #ffb800;
+  --info-color: #29b6f6;
+
+  /* Sidebar */
+  --sidebar-bg: #1c1e21;
+  --sidebar-icon: rgba(255, 255, 255, 0.6);
+  --sidebar-icon-active: #3797f0;
+  --sidebar-hover: rgba(255, 255, 255, 0.08);
+
+  /* Online indicator */
+  --online-color: #46c660;
+}
+
+/* ===== GLOBAL STYLES ===== */
+* {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+body {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* ===== SCROLLBAR DARK MODE ===== */
+[data-theme="dark"]::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"]::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"]::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ===== COMPONENTS USING VARIABLES ===== */
+
+/* Apply to all major components */
+.chat-page-zalo,
+.middle-panel,
+.right-panel,
+.chat-header-modern,
+.message-input-container,
+.conversation-item,
+.message-bubble .message-body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.message-bubble.own .message-body {
+  background: var(--bubble-own);
+  color: var(--bubble-text-own);
+}
+
+.message-bubble.other .message-body {
+  background: var(--bubble-other);
+  color: var(--bubble-text-other);
+}
+
+.message-list {
+  background: var(--bg-secondary);
+}
+
+.message-textarea,
+.search-input {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.input-icon-btn:hover,
+.header-action-btn:hover {
+  background: var(--bg-hover);
+}
+
+.conversation-item.selected {
+  background: var(--primary-light);
+}
+
+.left-sidebar {
+  background: var(--sidebar-bg);
+}
+
+.sidebar-icon-btn {
+  color: var(--sidebar-icon);
+}
+
+.sidebar-icon-btn.active {
+  color: var(--sidebar-icon-active);
+}
+
+.sidebar-icon-btn:hover {
+  background: var(--sidebar-hover);
+}
+/* ✅ FIX DROPDOWN Z-INDEX */
+.message-actions-dropdown {
+  z-index: 99999 !important;
+}
+
+.more-dropdown-menu {
+  z-index: 99999 !important;
+}
